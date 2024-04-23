@@ -1,7 +1,7 @@
 import React from "react";
 import InterludeOption from "./InterludeOption";
 import './styles/InterludeOptionList.css'
-import generateDefaultInterludeSet from "../interlude-generator/InterludeGenerator";
+import generateDefaultInterludeSet from "../../scripts/interlude-generator/InterludeGenerator";
 import RegenerateInterludeScenarioButton from './RegenerateInterludeScenarioButton'
 
 
