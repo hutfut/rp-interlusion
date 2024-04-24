@@ -2,15 +2,14 @@ import './App.css';
 import InterludeOptionList from './components/interlude/InterludeOptionList';
 import CollapsibleContainer from './components/meta/CollapsibleContainer';
 import React from 'react';
-import Slider from './components/scorecard/Slider';
+import SceneManager from './components/scorecard/SceneManager';
 
 class InterludeApp extends React.Component {
   render () {
     return (
       <div className='app-container'>
         <CollapsibleContainer title="Scorecard">
-          <Slider initialValue={5} onChange={this.handleSliderChange} orientation="vertical" />
-          <Slider initialValue={5} onChange={this.handleSliderChange} orientation="horizontal" />
+          <SceneManager/>
         </CollapsibleContainer>
 
         <CollapsibleContainer title='Interludes'>
