@@ -16,27 +16,37 @@ class SceneEntityList extends React.Component {
     }
 
     handleEntityScoreChange = (index, newScore) => {
-        const { entityScores } = this.state
-        _.set(entityScores, index, newScore)
-        this.setState({entityScores: entityScores})
+        this.props.updateEntityScores(index, newScore)
+    }
 
-        this.props.updateEntityScores(this.state.entityScores)
+    updateDisplayForIndex = (index, name) => {
+        this.props.updateDisplayForIndex(index, name)
     }
 
     addNewEntity = () => {
 
         const index = this.state.entityList.length
 
-        const newEntity = <SceneEntity key={this.state.entityList.length} index={index} initialValue={.5} handleEntityScoreChange={this.handleEntityScoreChange}/>
+        const newEntity = 
+            <SceneEntity 
+                key={index}
+                index={index} initialValue={.5} 
+                handleEntityScoreChange={this.handleEntityScoreChange}
+                updateDisplayForIndex={this.updateDisplayForIndex}/>
 
         this.setState(
             {   
-                entityList: this.state.entityList.concat(newEntity),
-                entityScores: _.set(this.state.entityScores, index, .5)
+                entityList: this.state.entityList.concat(newEntity)
             }
         )
 
-        this.props.updateEntityScores(this.state.entityScores)
+        let e = {
+            'index': index,
+            'displayName': index,
+            'score': .5 
+        }
+
+        this.props.addNewEntity(e)
 
     }
 

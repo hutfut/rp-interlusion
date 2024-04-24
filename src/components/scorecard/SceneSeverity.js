@@ -20,7 +20,13 @@ class SceneSeverity extends React.Component {
         return (
             <div className='scene-severity'>
                 <div>Severity</div>
-                <Slider initialValue={this.state.initialValue} onChange={this.updateSeverity} orientation="vertical" />
+                <Slider 
+                    initialValue={this.state.initialValue} 
+                    onChange={this.updateSeverity} 
+                    orientation="vertical" 
+                    minValue={1}
+                    maxValue={5}
+                    valueStep={.1}/>
             </div> 
         )
     }

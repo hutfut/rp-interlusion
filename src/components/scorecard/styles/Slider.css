@@ -1,4 +1,5 @@
 .slider {
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

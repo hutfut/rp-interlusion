@@ -13,8 +13,8 @@ class SceneManager extends React.Component {
 
         this.state = {
             isTracking: false,
-            severity: 5,
-            entityScores: {},
+            severity: 2.5,
+            entitySnapshot: {},
             interval: null,
             scoreAggregates: {}
         }
@@ -28,16 +28,46 @@ class SceneManager extends React.Component {
         this.setState({severity: value})
     }
 
-    updateEntityScores = (entityData) => {
-        this.setState({entityScores: entityData})
+    updateDisplayForIndex = (index, name) => {
+
+        const {entitySnapshot, scoreAggregates} = this.state
+
+        _.set(entitySnapshot, `${index}.displayName`, name)
+        _.set(scoreAggregates, `${index}.displayName`, name)
+
+        this.setState({entitySnapshot: entitySnapshot})
+        this.setState({scoreAggregates: scoreAggregates})
+    }
+
+    updateEntityScores = (index, score) => {
+        const {entitySnapshot} = this.state
+
+        _.set(entitySnapshot, `${index}.score`, score)
+
+        this.setState({entitySnapshot: entitySnapshot})
+    }
+
+    addNewEntity = (entity) => {
+        const {entitySnapshot, scoreAggregates} = this.state
+
+        _.set(entitySnapshot, entity.index, {'score': entity.score, 'displayName' : entity.displayName})
+        _.set(scoreAggregates, `${entity.index}.displayName`, entity.displayName)
+        _.set(scoreAggregates, `${entity.index}.score`, 0)
+
+
+        this.setState({entitySnapshot: entitySnapshot})
+        this.setState({scoreAggregates: scoreAggregates})
     }
 
     logScores = () => {
-        const {entityScores} = this.state
-        const {scoreAggregates} = this.state
+        const {entitySnapshot, scoreAggregates, severity} = this.state
 
-        _.entries(entityScores).forEach((entry) => {
-            _.set(scoreAggregates, entry[0], parseFloat(_.get(scoreAggregates, entry[0], 0)) + parseFloat(entry[1]))
+        _.keys(entitySnapshot).forEach((key) => {
+
+            let currentScoreSum = parseFloat(_.get(scoreAggregates, `${key}.score`, 0))
+            let incomingValue =  parseFloat(entitySnapshot[key]['score']) * severity //scalar
+
+            _.set(scoreAggregates, `${key}.score`, (currentScoreSum + incomingValue).toFixed(2))
         })
 
         this.setState({scoreAggregates: scoreAggregates})
@@ -62,8 +92,8 @@ class SceneManager extends React.Component {
         return (
             
             <div>
-                <SceneSeverity initialValue={5} updateSeverity={this.updateSeverity}/>
-                <SceneEntityList updateEntityScores={this.updateEntityScores} isTracking={this.state.isTracking}/>
+                <SceneSeverity initialValue={2.5} updateSeverity={this.updateSeverity}/>
+                <SceneEntityList updateDisplayForIndex={this.updateDisplayForIndex} isTracking={this.state.isTracking} addNewEntity={this.addNewEntity} updateEntityScores={this.updateEntityScores}/>
                 <SceneScores scoreAggregates={this.state.scoreAggregates}/>
 
                 <div className='scene-manager-buttons'>

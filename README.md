@@ -1,3 +1,11 @@
 https://rp-interlusion.vercel.app/
 
-Barebones interlude generator to be used with tabletop roleplaying games.
+Collection of small widgets facilitating TTRPG
+
+_**Scorecard**_
+
+Widget for tracking subjective engagement during gameplay.
+
+_**Interludes**_
+
+Widget generating prompts for player-lead, unscripted scenes

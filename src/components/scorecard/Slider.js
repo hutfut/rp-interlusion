@@ -28,9 +28,9 @@ class Slider extends Component {
         <input
           onChange={this.handleChange}
           type="range"
-          min={0}
-          max={1}
-          step={0.05}
+          min={this.props.minValue}
+          max={this.props.maxValue}
+          step={this.props.valueStep}
           value={value}
           orient={isVertical ? 'vertical' : 'horizontal'}
           className='slider'

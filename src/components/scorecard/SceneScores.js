@@ -15,13 +15,17 @@ class SceneScores extends React.Component {
 
         const scoreAggregates = this.state.scoreAggregates
 
+        let blah = _.keys(scoreAggregates)
+
         return (
             <div className='scores'>
                 {
-                    _.entries(scoreAggregates).map((entry, index)=>{
+
+                    
+                blah.map((key)=>{
                         return (
-                            <div key={index}>
-                                {entry[0]} : {entry[1]}
+                            <div key={key}>
+                                {scoreAggregates[key]['displayName']} : {scoreAggregates[key]['score']}
                             </div>)
                     })
                 }
