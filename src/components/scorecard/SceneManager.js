@@ -77,7 +77,7 @@ class SceneManager extends React.Component {
         this.toggleTracking()
 
         //TODO: customize timeout. scale with severity?
-        this.setState({interval: setInterval(this.logScores, 1000)})
+        this.setState({interval: setInterval(this.logScores, 5000)})
     }
 
     stopTracking = () => {
