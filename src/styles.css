@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --primary-color: #9F7AEA;
+  --background-color: #1A202C;
+  --card-background: #2D3748;
+  --text-primary: #E2E8F0;
+  --text-secondary: #A0AEC0;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base styles */
+body {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-primary);
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.title {
+  font-family: 'MedievalSharp', cursive;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 3rem;
+  text-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.footer {
+  margin-top: 4rem;
+  text-align: center;
+  font-family: 'Lora', serif;
+  color: var(--text-secondary);
+} 
