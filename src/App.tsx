@@ -1,56 +1,56 @@
 import { useState } from 'react'
-import { CategoryCard } from './components/CategoryCard'
+import { CategorySelection } from './components/CategorySelection'
+import { PromptDisplay } from './components/PromptDisplay'
+import { categories, Category } from './data/categories'
+import { generatePrompt } from './data/prompts'
 import './styles.css'
-
-const categories = [
-  {
-    title: 'Trek',
-    description: 'Generate prompts for traveling adventures and road encounters',
-    icon: '🗺️'
-  },
-  {
-    title: 'Backstory',
-    description: 'Explore character histories and past events',
-    icon: '📚'
-  },
-  {
-    title: 'Downtime',
-    description: 'Create memorable moments during breaks from the main quest',
-    icon: '🌙'
-  },
-  {
-    title: 'Social Encounter',
-    description: 'Develop interesting NPC interactions and diplomatic scenarios',
-    icon: '🗣️'
-  },
-  {
-    title: 'Character Bond',
-    description: 'Build relationships between party members',
-    icon: '🤝'
-  },
-  {
-    title: 'Local Color',
-    description: 'Add flavor to locations and discover local customs',
-    icon: '🎨'
-  }
-]
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  const [currentPrompt, setCurrentPrompt] = useState<string>("")
+  const [isTransitioning, setIsTransitioning] = useState(false)
+
+  const handleCategorySelect = (category: string) => {
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setSelectedCategory(category)
+      setCurrentPrompt(generatePrompt(category))
+      setIsTransitioning(false)
+    }, 300)
+  }
+
+  const handleNewPrompt = () => {
+    if (selectedCategory) {
+      setCurrentPrompt(generatePrompt(selectedCategory))
+    }
+  }
+
+  const handleBack = () => {
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setSelectedCategory(null)
+      setCurrentPrompt("")
+      setIsTransitioning(false)
+    }, 300)
+  }
 
   return (
     <div className="container">
-      <h2 className="title">Select Interlude Type</h2>
-      
-      <div className="grid">
-        {categories.map(category => (
-          <CategoryCard
-            key={category.title}
-            category={category}
-            onClick={setSelectedCategory}
-          />
-        ))}
-      </div>
+      {!selectedCategory ? (
+        <CategorySelection
+          categories={categories}
+          onCategorySelect={handleCategorySelect}
+          isTransitioning={isTransitioning}
+        />
+      ) : (
+        <PromptDisplay
+          category={selectedCategory}
+          prompt={currentPrompt}
+          isTransitioning={isTransitioning}
+          onBack={handleBack}
+          onNewPrompt={handleNewPrompt}
+        />
+      )}
 
       <footer className="footer">
         <p>Created with ❤️ for the TTRPG community</p>
