@@ -1,5 +1,5 @@
 import './PromptCard.css'
-import { getPromptTags } from '../data/prompts'
+import { getPromptTags } from '../../data/prompts'
 
 interface PromptCardProps {
   category: string;

@@ -1,4 +1,5 @@
 import { CategoryCard } from './CategoryCard'
+import './CategoryCard.css'
 
 interface Category {
   title: string
@@ -15,7 +16,6 @@ interface CategorySelectionProps {
 export function CategorySelection({ categories, onCategorySelect, isTransitioning }: CategorySelectionProps) {
   return (
     <>
-      <h2 className="title">Select Interlude Type</h2>
       <div className={`content ${isTransitioning ? 'fade' : ''}`}>
         <div className="grid">
           {categories.map(category => (

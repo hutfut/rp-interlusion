@@ -1,0 +1,200 @@
+.scorecard-container {
+  padding: 2rem;
+  background: #181a20;
+  min-height: 100vh;
+  color: #eee;
+}
+
+.scorecard-heading {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.scorecard-intensity {
+  color: #bbb;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.scorecard-list {
+  list-style: none;
+  padding: 0;
+  color: #eee;
+}
+
+.scorecard-list li {
+  margin-bottom: 0.5rem;
+}
+
+.active-scene-window {
+  margin: 0 auto;
+  max-width: 1050px;
+  background: #23242a;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #0008;
+  padding: 32px;
+  margin-bottom: 32px;
+  border: 1px solid #444;
+}
+
+.scene-controls {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  padding: 16px 0;
+}
+
+.scene-controls button {
+  padding: 0.75em 2em;
+  font-size: 1.2em;
+  border-radius: 8px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-weight: bold;
+}
+
+.scene-controls .play {
+  background: #38a169;
+}
+.scene-controls .play:hover {
+  background: #48bb78;
+}
+
+.scene-controls .pause {
+  background: #e53e3e;
+}
+.scene-controls .pause:hover {
+  background: #f56565;
+}
+
+.scene-controls .end {
+  background: #718096;
+}
+.scene-controls .end:hover {
+  background: #a0aec0;
+}
+
+.new-scene-card {
+  min-width: 180px;
+  min-height: 120px;
+  background: #23242a;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  border: 2px dashed #888;
+  box-shadow: 0 1px 6px #0004;
+  transition: border 0.2s, background 0.2s, color 0.2s;
+}
+
+.new-scene-card:hover {
+  border: 2px dashed #007bff;
+  background: #2d3748;
+  color: #fff;
+}
+
+/* New styles for externalized CSS */
+.saved-scenes-list {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.saved-scene-card {
+  background: #23242a;
+  border-radius: 8px;
+  padding: 16px;
+  min-width: 180px;
+  min-height: 120px;
+  box-shadow: 0 1px 6px #0004;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border: 1px solid #444;
+}
+
+.scene-delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 1.2em;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.scene-delete-btn:hover {
+  background: #444;
+  color: #fff;
+}
+
+.saved-scene-name {
+  font-weight: bold;
+  color: #fff;
+}
+
+.saved-scene-date {
+  color: #bbb;
+}
+
+.saved-scene-duration {
+  color: #bbb;
+}
+
+.saved-scene-actors-list {
+  margin: 8px 0 0 0;
+  padding: 0;
+}
+
+.saved-scene-actor-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  list-style: none;
+}
+
+.saved-scene-actor-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #444;
+}
+
+.saved-scene-actor-name {
+  color: #eee;
+  font-size: 14px;
+}
+
+.saved-scene-actor-score {
+  color: #bbb;
+  font-size: 14px;
+}
+
+.saved-scene-unknown-token {
+  color: #888;
+  font-style: italic;
+  font-size: 14px;
+} 

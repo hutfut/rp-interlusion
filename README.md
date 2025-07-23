@@ -1,54 +1,83 @@
-# React + TypeScript + Vite
+# RP Interlusion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based application for managing role-playing game interludes, character tokens, and scene scoring.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The project is organized by features to improve maintainability and separation of concerns:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+src/
+├── components/
+│   ├── common/           # Shared components used across features
+│   │   ├── SlidingTrayNav.tsx
+│   │   ├── SlidingTrayNav.css
+│   │   └── index.ts
+│   ├── interlude/        # Interlude feature components
+│   │   ├── CategoryCard.tsx
+│   │   ├── CategoryCard.css
+│   │   ├── CategorySelection.tsx
+│   │   ├── PromptCard.tsx
+│   │   ├── PromptCard.css
+│   │   ├── PromptDisplay.tsx
+│   │   └── index.ts
+│   ├── scorecard/        # Scorecard feature components
+│   │   ├── ActiveSceneCard.tsx
+│   │   ├── ActiveSceneCard.css
+│   │   ├── Scorecard.tsx
+│   │   ├── Scorecard.css
+│   │   └── index.ts
+│   └── tokens/           # Token management components
+│       ├── Tokens.tsx
+│       ├── Tokens.css
+│       └── index.ts
+├── data/                 # Data and prompt generation
+│   ├── categories.ts
+│   └── prompts/
+└── styles.css           # Global styles
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Features
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Interlude
+- Category selection for different types of prompts
+- Dynamic prompt generation
+- Smooth transitions between views
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Scorecard
+- Scene creation and management
+- Real-time scoring with intensity and engagement sliders
+- Individual character engagement tracking
+- Scene history and playback controls
+
+### Tokens
+- Character token creation and management
+- Image upload support
+- Token selection for scenes
+
+## Development
+
+### CSS Organization
+- All CSS has been externalized from TSX files
+- Feature-based CSS organization
+- Consistent naming conventions
+- No inline styles in components
+
+### Component Organization
+- Feature-based directory structure
+- Index files for clean imports
+- Shared components in common directory
+- Clear separation of concerns
+
+## Getting Started
+
+1. Install dependencies: `npm install`
+2. Start development server: `npm run dev`
+3. Open browser to the displayed URL
+
+## Technologies Used
+
+- React 18
+- TypeScript
+- Vite
+- CSS3

@@ -36,7 +36,7 @@ body {
 .title {
   text-align: center;
   margin-bottom: 2rem;
-  color: #333;
+  color: #FFF8E7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,6 +72,20 @@ body {
   margin-top: 3rem;
   padding: 1rem;
   color: #666;
+}
+
+.footer a {
+  display: inline-block;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+  text-decoration-skip-ink: none;
+  padding: 0;
+  color: #FFF8E7;
+}
+
+.footer a:visited {
+  color: #FFF8E7;
 }
 
 .content {
@@ -135,4 +149,13 @@ body {
 .action-button:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(159, 122, 234, 0.4);
+}
+
+.app-content {
+  margin-left: 200px;
+  min-height: 100vh;
+}
+
+.footer-separator {
+  margin: 0 0.75em;
 } 

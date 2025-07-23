@@ -1,4 +1,5 @@
 import { PromptCard } from './PromptCard'
+import './PromptCard.css'
 
 interface PromptDisplayProps {
   category: string
