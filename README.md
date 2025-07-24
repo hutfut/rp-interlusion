@@ -21,20 +21,6 @@ A collection of tools to facilitate TTRPG gameplay.
 - Image upload support
 - Token selection for scenes
 
-## Development
-
-### CSS Organization
-- All CSS has been externalized from TSX files
-- Feature-based CSS organization
-- Consistent naming conventions
-- No inline styles in components
-
-### Component Organization
-- Feature-based directory structure
-- Index files for clean imports
-- Shared components in common directory
-- Clear separation of concerns
-
 ## Getting Started
 
 1. Install dependencies: `npm install`
