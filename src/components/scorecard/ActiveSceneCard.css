@@ -1,5 +1,5 @@
 .active-scene-card {
-  border: 1px solid #ccc;
+  border: 1px solid #4A5568;
   border-radius: 8px;
   padding: 16px;
   cursor: pointer;
@@ -7,17 +7,17 @@
 }
 
 .active-scene-form {
-  border: 1px solid #888;
+  border: 1px solid #4A5568;
   border-radius: 8px;
   padding: 24px;
   max-width: 500px;
-  background: #23242a;
+  background: var(--card-background);
 }
 
 .active-scene-form label {
   display: block;
   margin-bottom: 4px;
-  color: #eee;
+  color: var(--text-primary);
 }
 
 .active-scene-form input[type="text"] {
@@ -25,9 +25,9 @@
   margin-bottom: 12px;
   padding: 6px;
   border-radius: 4px;
-  border: 1px solid #333;
-  background: #23242a;
-  color: #eee;
+  border: 1px solid #4A5568;
+  background: var(--card-background);
+  color: var(--text-primary);
 }
 
 .active-scene-tokens {
@@ -38,7 +38,7 @@
 }
 
 .active-scene-token {
-  border: 1px solid #444;
+  border: 1px solid #4A5568;
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
@@ -52,9 +52,9 @@
 }
 
 .active-scene-token.selected {
-  border: 2px solid #007bff;
-  background: rgba(0, 123, 255, 0.08);
-  box-shadow: 0 0 8px #007bff33;
+  border: 2px solid var(--primary-color);
+  background: rgba(159, 122, 234, 0.08);
+  box-shadow: 0 0 8px rgba(159, 122, 234, 0.2);
 }
 
 .active-scene-token img {
@@ -63,22 +63,22 @@
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 4px;
-  border: 1px solid #888;
-  background: #222;
+  border: 1px solid #718096;
+  background: #2D3748;
 }
 
 .active-scene-token.selected img {
-  border: 2px solid #007bff;
+  border: 2px solid var(--primary-color);
 }
 
 .active-scene-token-name {
   font-size: 12px;
   text-align: center;
-  color: #eee;
+  color: var(--text-primary);
 }
 
 .active-scene-token-selected {
-  color: #007bff;
+  color: var(--primary-color);
   font-size: 10px;
 }
 
@@ -87,15 +87,15 @@
   padding: 6px 16px;
   border-radius: 4px;
   border: none;
-  background: #007bff;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--text-primary);
   cursor: pointer;
   transition: background 0.2s;
 }
 
 .active-scene-form button:disabled {
-  background: #444;
-  color: #aaa;
+  background: #4A5568;
+  color: var(--text-secondary);
   cursor: not-allowed;
 }
 
@@ -104,11 +104,11 @@
 }
 
 .active-scene-form button[type="button"]:hover {
-  background: #a0aec0;
+  background: #A0AEC0;
 }
 
 .active-scene-form button:hover {
-  background: #0056b3;
+  background: #8B5CF6;
 }
 
 /* New styles for externalized CSS */
@@ -126,7 +126,7 @@
 
 .character-engagement-header {
   margin-bottom: 8px;
-  color: #eee;
+  color: var(--text-primary);
   font-weight: bold;
 }
 
@@ -142,17 +142,17 @@
   height: 32px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid #444;
+  border: 1px solid #4A5568;
 }
 
 .character-engagement-name {
-  color: #eee;
+  color: var(--text-primary);
   font-weight: bold;
   min-width: 80px;
 }
 
 .character-engagement-value {
-  color: #bbb;
+  color: var(--text-secondary);
   min-width: 30px;
   text-align: right;
 }
@@ -163,7 +163,7 @@
 }
 
 .character-engagement-score {
-  color: #bbb;
+  color: var(--text-secondary);
   min-width: 60px;
   text-align: right;
 }
@@ -185,7 +185,7 @@ input[type="range"] {
 }
 
 input[type="range"]::-webkit-slider-track {
-  background: #333;
+  background: #4A5568;
   height: 6px;
   border-radius: 3px;
 }
@@ -193,7 +193,7 @@ input[type="range"]::-webkit-slider-track {
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  background: #007bff;
+  background: var(--primary-color);
   height: 16px;
   width: 16px;
   border-radius: 50%;
@@ -201,14 +201,14 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 input[type="range"]::-moz-range-track {
-  background: #333;
+  background: #4A5568;
   height: 6px;
   border-radius: 3px;
   border: none;
 }
 
 input[type="range"]::-moz-range-thumb {
-  background: #007bff;
+  background: var(--primary-color);
   height: 16px;
   width: 16px;
   border-radius: 50%;
