@@ -1,41 +1,7 @@
 # RP Interlusion
 
-A React-based application for managing role-playing game interludes, character tokens, and scene scoring.
+A collection of tools to facilitate TTRPG gameplay.
 
-## Project Structure
-
-The project is organized by features to improve maintainability and separation of concerns:
-
-```
-src/
-├── components/
-│   ├── common/           # Shared components used across features
-│   │   ├── SlidingTrayNav.tsx
-│   │   ├── SlidingTrayNav.css
-│   │   └── index.ts
-│   ├── interlude/        # Interlude feature components
-│   │   ├── CategoryCard.tsx
-│   │   ├── CategoryCard.css
-│   │   ├── CategorySelection.tsx
-│   │   ├── PromptCard.tsx
-│   │   ├── PromptCard.css
-│   │   ├── PromptDisplay.tsx
-│   │   └── index.ts
-│   ├── scorecard/        # Scorecard feature components
-│   │   ├── ActiveSceneCard.tsx
-│   │   ├── ActiveSceneCard.css
-│   │   ├── Scorecard.tsx
-│   │   ├── Scorecard.css
-│   │   └── index.ts
-│   └── tokens/           # Token management components
-│       ├── Tokens.tsx
-│       ├── Tokens.css
-│       └── index.ts
-├── data/                 # Data and prompt generation
-│   ├── categories.ts
-│   └── prompts/
-└── styles.css           # Global styles
-```
 
 ## Features
 

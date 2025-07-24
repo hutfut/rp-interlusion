@@ -26,6 +26,7 @@ export const Scorecard: React.FC = () => {
   // Active scene state
   const [activeScene, setActiveScene] = useState<Scorecard | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [elapsed, setElapsed] = useState<number>(0);
 
   const intervalRef = useRef<number | null>(null);
 
@@ -154,7 +155,7 @@ export const Scorecard: React.FC = () => {
       {activeScene ? (
         <div className="active-scene-window">
           <h2 className="scorecard-heading">{activeScene.name}</h2>
-          <div className="scorecard-intensity">Elapsed: {activeScene.duration}s</div>
+          <div className="scorecard-intensity">Elapsed: {elapsed}s</div>
           
           <ActiveSceneCard 
             isActiveScene={true}
